@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using lesson1.Models;
 using lesson1.Interfaces;
+using lesson1.Models;
 
 namespace lesson1.Controllers;
 
