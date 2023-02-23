@@ -1,29 +1,38 @@
 using lesson1.Models;
 using System.Collections.Generic;
 using System.Linq;
+using lesson1.Interfaces;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+using lesson1.Utilities;
 
-namespace lesson1.Controllers{
+namespace lesson1.Services{
 
-   public static class JobService{
+   public  class JobService:jobInterface{
 
-    private static List <Job> ListJobs = new List<Job>{
+    private  List <Job> ListJobs = new List<Job>{
         new Job {Id=1,Name="home work in core",IsDone=false},
         new Job {Id=2,Name="learnning to c#'s test",IsDone=false}
     };
-       public static List<Job> GetAll() => ListJobs;
+       public  List<Job> GetAll() => ListJobs;
 
-       public static Job Get(int id)
+       public  Job Get(int id)
         {
             return ListJobs.FirstOrDefault(t => t.Id == id);
         }
 
-        public static void Add(Job Job){
+        public  void Add(Job Job){
         Job.Id=ListJobs.Max(t=>t.Id)+1;
         ListJobs.Add(Job);
         
        }
 
-       public static bool Update(int id, Job newJob)
+       public  bool Update(int id, Job newJob)
         {
             if (newJob.Id != id)
                 return false;
@@ -34,7 +43,7 @@ namespace lesson1.Controllers{
             return true;
         }
 
-        public static bool Delete(int id)
+        public  bool Delete(int id)
         {
             var Job = ListJobs.FirstOrDefault(t => t.Id == id);
             if (Job == null)
