@@ -31,3 +31,5 @@ C:\Users\משתמש\Documents\הנדסאית מושלמת\שנה ב\core\lesson1
 C:\Users\משתמש\Documents\הנדסאית מושלמת\שנה ב\core\lesson1\obj\Debug\net7.0\lesson1.pdb
 C:\Users\משתמש\Documents\הנדסאית מושלמת\שנה ב\core\lesson1\obj\Debug\net7.0\lesson1.genruntimeconfig.cache
 C:\Users\משתמש\Documents\הנדסאית מושלמת\שנה ב\core\lesson1\obj\Debug\net7.0\ref\lesson1.dll
+C:\Users\משתמש\Documents\הנדסאית מושלמת\שנה ב\core\lesson1\bin\Debug\net7.0\lesson1.staticwebassets.runtime.json
+C:\Users\משתמש\Documents\הנדסאית מושלמת\שנה ב\core\lesson1\bin\Debug\net7.0\Data\job.json

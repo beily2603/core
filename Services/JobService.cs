@@ -1,24 +1,47 @@
 using lesson1.Models;
-using System.Collections.Generic;
-using System.Linq;
+// using System.Collections.Generic;
+// using System.Linq;
 using lesson1.Interfaces;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
-using lesson1.Utilities;
+// using Microsoft.AspNetCore.HttpsPolicy;
+// using Microsoft.AspNetCore.Mvc;
+// using Microsoft.Extensions.Configuration;
+// using Microsoft.Extensions.DependencyInjection;
+// using Microsoft.Extensions.Hosting;
+// using Microsoft.Extensions.Logging;
+// using Microsoft.OpenApi.Models;
+// using lesson1.Utilities;
+using System.Text.Json;
+// using Microsoft.AspNetCore.Hosting;
+
 
 namespace lesson1.Services{
 
-   public  class JobService:jobInterface{
 
-    private  List <Job> ListJobs = new List<Job>{
-        new Job {Id=1,Name="home work in core",IsDone=false},
-        new Job {Id=2,Name="learnning to c#'s test",IsDone=false}
-    };
+   public  class JobService:jobInterface{
+  
+        List<Job> ListJobs { get; }
+        private IWebHostEnvironment  webHost;
+        private string filePath;
+        public JobService(IWebHostEnvironment webHost)
+        {
+            this.webHost = webHost;
+            this.filePath = Path.Combine(webHost.ContentRootPath, "Data", "job.json");
+            //this.filePath = webHost.ContentRootPath+@"/Data/Pizza.json";
+            using (var jsonFile = File.OpenText(filePath))
+            {
+               ListJobs = JsonSerializer.Deserialize<List<Job>>(jsonFile.ReadToEnd(),
+                new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+            }
+        }
+
+        private void saveToFile()
+        {
+            File.WriteAllText(filePath, JsonSerializer.Serialize(ListJobs));
+        }
+
        public  List<Job> GetAll() => ListJobs;
 
        public  Job Get(int id)
@@ -29,6 +52,7 @@ namespace lesson1.Services{
         public  void Add(Job Job){
         Job.Id=ListJobs.Max(t=>t.Id)+1;
         ListJobs.Add(Job);
+        saveToFile();
         
        }
 
@@ -37,9 +61,10 @@ namespace lesson1.Services{
             if (newJob.Id != id)
                 return false;
             
-            var Job = ListJobs.FirstOrDefault(t => t.Id == id);
-            Job.Name = newJob.Name;
-            Job.IsDone=newJob.IsDone;
+            var Jobb = ListJobs.FirstOrDefault(t => t.Id == id);
+            Jobb.Name = newJob.Name;
+            Jobb.IsDone=newJob.IsDone;
+            saveToFile();
             return true;
         }
 
@@ -49,6 +74,7 @@ namespace lesson1.Services{
             if (Job == null)
                 return false;
             ListJobs.Remove(Job);
+            saveToFile();
             return true;
         }
    }

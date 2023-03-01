@@ -8,9 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using lesson1.Interfaces;
-using lesson1.Services;
-using lesson1.Utilities;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +28,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseDefaultFiles();
+
+app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 

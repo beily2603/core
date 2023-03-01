@@ -1,11 +1,71 @@
 {
   "Version": 1,
-  "Hash": "l0Xe4036yA2QP50Ikj2ObeW9kEh1UOHwzk/PZHiawbY=",
+  "Hash": "w/8Y56QgovE/+yeviHAFJ2FviE/fS0YaFcjbScmBJ/0=",
   "Source": "lesson1",
   "BasePath": "_content/lesson1",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "lesson1\\wwwroot",
+      "Source": "lesson1",
+      "ContentRoot": "C:\\Users\\משתמש\\Documents\\הנדסאית מושלמת\\שנה ב\\core\\lesson1\\wwwroot\\",
+      "BasePath": "_content/lesson1",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\משתמש\\Documents\\הנדסאית מושלמת\\שנה ב\\core\\lesson1\\wwwroot\\css\\site.css",
+      "SourceId": "lesson1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\משתמש\\Documents\\הנדסאית מושלמת\\שנה ב\\core\\lesson1\\wwwroot\\",
+      "BasePath": "_content/lesson1",
+      "RelativePath": "css/site.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\משתמש\\Documents\\הנדסאית מושלמת\\שנה ב\\core\\lesson1\\wwwroot\\index.html",
+      "SourceId": "lesson1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\משתמש\\Documents\\הנדסאית מושלמת\\שנה ב\\core\\lesson1\\wwwroot\\",
+      "BasePath": "_content/lesson1",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\משתמש\\Documents\\הנדסאית מושלמת\\שנה ב\\core\\lesson1\\wwwroot\\js\\site.js",
+      "SourceId": "lesson1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\משתמש\\Documents\\הנדסאית מושלמת\\שנה ב\\core\\lesson1\\wwwroot\\",
+      "BasePath": "_content/lesson1",
+      "RelativePath": "js/site.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\site.js"
+    }
+  ]
 }
