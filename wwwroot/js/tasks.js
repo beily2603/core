@@ -1,11 +1,22 @@
-const uri = '/job';
-let ListJob = [];
+const uri = '/Task';
+var token=sessionStorage.getItem("token");
+let listJob = [];
 
 function getTasks() {
-    fetch(uri)
+    alert("get")
+    alert(token);
+    fetch(uri, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+          
+        }
+    })
         .then(response => response.json())
-        .then(data => _displayItems(data))
-        .catch(error => console.error('Unable to get items.', error));
+        .then(data => {_displayItems(data)})
+        .catch(error => console.error('Athoraize not valid!.', error));
 }
 
 function addTask() {
@@ -20,7 +31,8 @@ function addTask() {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
             },
             body: JSON.stringify(item)
         })
@@ -34,14 +46,19 @@ function addTask() {
 
 function deleteTask(id) {
     fetch(`${uri}/${id}`, {
-            method: 'DELETE'
+            method: 'DELETE',
+           headers:{
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
+           }
         })
         .then(() => getTasks())
         .catch(error => console.error('Unable to delete item.', error));
 }
 
 function displayEditForm(id) {
-    const item = ListJob.find(item => item.id === id);
+    const item = listJob.find(item => item.id === id);
 
     document.getElementById('edit-name').value = item.name;
     document.getElementById('edit-id').value = item.id;
@@ -52,17 +69,20 @@ function displayEditForm(id) {
 function updateTask() {
     const itemId = document.getElementById('edit-id').value;
     const item = {
-        id: parseInt(itemId, 10),
+        id: parseInt(itemId,10),
         name: document.getElementById('edit-name').value.trim(),
         isDone: document.getElementById('edit-IsDone').checked
     };
 
     fetch(`${uri}/${itemId}`, {
+       
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
             },
+           
             body: JSON.stringify(item)
         })
         .then(() => getTasks())
@@ -78,12 +98,14 @@ function closeInput() {
 }
 
 function _displayCount(itemCount) {
+    alert("display count");
     const name = (itemCount === 1) ? 'Task' : 'Tasks';
 
     document.getElementById('counter').innerText = `${itemCount} ${name}`;
 }
 
 function _displayItems(data) {
+    alert("display item");
     const tBody = document.getElementById('listJob');
     tBody.innerHTML = '';
 
@@ -121,5 +143,5 @@ function _displayItems(data) {
         td4.appendChild(deleteButton);
     });
 
-    ListJob = data;
+    listJob = data;
 }

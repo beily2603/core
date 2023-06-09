@@ -5,12 +5,36 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\משתמש\\Documents\\הנדסאית מושלמת\\שנה ב\\core\\lesson1\\wwwroot\\html\\login.html",
+      "PackagePath": "staticwebassets\\html\\login.html"
+    },
+    {
+      "Id": "C:\\Users\\משתמש\\Documents\\הנדסאית מושלמת\\שנה ב\\core\\lesson1\\wwwroot\\html\\old.html",
+      "PackagePath": "staticwebassets\\html\\old.html"
+    },
+    {
+      "Id": "C:\\Users\\משתמש\\Documents\\הנדסאית מושלמת\\שנה ב\\core\\lesson1\\wwwroot\\html\\tasks.html",
+      "PackagePath": "staticwebassets\\html\\tasks.html"
+    },
+    {
+      "Id": "C:\\Users\\משתמש\\Documents\\הנדסאית מושלמת\\שנה ב\\core\\lesson1\\wwwroot\\html\\users.html",
+      "PackagePath": "staticwebassets\\html\\users.html"
+    },
+    {
       "Id": "C:\\Users\\משתמש\\Documents\\הנדסאית מושלמת\\שנה ב\\core\\lesson1\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Users\\משתמש\\Documents\\הנדסאית מושלמת\\שנה ב\\core\\lesson1\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
+      "Id": "C:\\Users\\משתמש\\Documents\\הנדסאית מושלמת\\שנה ב\\core\\lesson1\\wwwroot\\js\\login.js",
+      "PackagePath": "staticwebassets\\js\\login.js"
+    },
+    {
+      "Id": "C:\\Users\\משתמש\\Documents\\הנדסאית מושלמת\\שנה ב\\core\\lesson1\\wwwroot\\js\\tasks.js",
+      "PackagePath": "staticwebassets\\js\\tasks.js"
+    },
+    {
+      "Id": "C:\\Users\\משתמש\\Documents\\הנדסאית מושלמת\\שנה ב\\core\\lesson1\\wwwroot\\js\\users.js",
+      "PackagePath": "staticwebassets\\js\\users.js"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.lesson1.props",
